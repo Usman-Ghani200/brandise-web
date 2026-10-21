@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://usman-ghani200.github.io/brandise/sitemap.xml
