@@ -35,7 +35,7 @@ section{padding:110px 0}
 .o{border-color:rgba(0,0,0,.3);color:var(--ink);background:none}.o:hover{background:rgba(63,120,252,.08)}
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
-.logo{font-family:Montserrat,system-ui,sans-serif;font-size:27px;letter-spacing:-.03em}.logo i{color:var(--acc);font-style:normal}
+.logo{display:inline-flex;align-items:center}.logo img{height:36px;width:auto;display:block}
 .links{display:flex;gap:34px;align-items:center;font-size:14.5px;color:var(--mut)}.links a:hover{color:var(--ink)}
 .burger{display:none;background:none;border:1px solid var(--line);color:var(--ink);width:46px;height:46px;border-radius:12px;font-size:20px;cursor:pointer}
 @media(max-width:900px){.burger{display:block}.links{display:none;position:absolute;top:72px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 28px 24px}.links.open{display:flex}.links a{padding:15px 0;border-bottom:1px solid var(--line);font-size:16px}.links .btn{margin-top:16px;border:0}}
@@ -82,7 +82,7 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--acc);border-colo
 .ci{margin-top:34px;display:grid;gap:12px;color:var(--mut);font-size:15.5px}.ci a{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
 footer{border-top:1px solid var(--line);padding:56px 0 34px;color:var(--mut);font-size:14.5px}
 .fg{display:flex;flex-wrap:wrap;justify-content:space-between;gap:34px}.fg ul{display:flex;gap:26px;flex-wrap:wrap}.fg a:hover,.legal a:hover{color:var(--ink)}
-.soc{display:flex;gap:12px}.soc a{width:44px;height:44px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center}.soc svg{width:18px;height:18px}
+.soc{display:flex;gap:14px}.soc a{width:44px;height:44px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:grid;place-items:center;color:#fff;background:rgba(255,255,255,.05);backdrop-filter:blur(4px);transition:all .3s cubic-bezier(.16,1,.3,1)}.soc a:hover{background:#3f78fc;border-color:#3f78fc;color:#fff;transform:translateY(-4px) scale(1.08);box-shadow:0 8px 22px rgba(63,120,252,.5)}.soc svg{width:20px;height:20px;transition:transform .3s}.soc a:hover svg{transform:scale(1.1)}
 .legal{margin-top:38px;padding-top:24px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13.5px}.legal div{display:flex;gap:22px}
 .rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
@@ -132,7 +132,7 @@ em{font-style:normal;background:linear-gradient(90deg,#3f78fc,#2a5fe0);-webkit-b
 .bl .band em{background:linear-gradient(90deg,#7da3ff,#fff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none}
 .band .btn.p{background:#fff;color:#000}.band .btn.p:hover{background:#3f78fc;color:#fff}
 form{border-color:#dbe4fb;box-shadow:0 30px 70px -34px rgba(63,120,252,.55)}
-footer{background:#000;color:#b8bdc9;border-top:0}footer .logo,footer .soc a{color:#fff}footer .fg a:hover,footer .legal a:hover{color:#7da3ff}
+footer{background:#000;color:#b8bdc9;border-top:0}footer .soc a{color:#fff}footer .fg a:hover,footer .legal a:hover{color:#7da3ff}
 footer .soc a,footer .legal{border-color:rgba(255,255,255,.2)}
 .nt{color:#222;background:rgba(63,120,252,.08);border-color:rgba(63,120,252,.4)}.nt b{color:#000}
 .ph{background:rgba(255,200,60,.35);color:#6b4d00}
@@ -141,7 +141,7 @@ footer .soc a,footer .legal{border-color:rgba(255,255,255,.2)}
 </style></head>
 <body>
 <header><div class="w nav">
-<a href="index.html" class="logo" aria-label="Brandise home">Brandise<i>.</i></a>
+<a href="index.html" class="logo" aria-label="Brandise home"><img src="logo-dark.png" alt="Brandise" width="157" height="36"></a>
 <button class="burger" id="bg" aria-expanded="false" aria-controls="lk" aria-label="Open menu">☰</button>
 <nav class="links" id="lk" aria-label="Main"><a href="index.html#services">Services</a><a href="projects.html">Work</a><a href="index.html#process">Process</a><a href="index.html#faq">FAQ</a><a href="index.html#contact" class="btn p">Get a Free Quote</a></nav>
 </div></header>
@@ -188,7 +188,7 @@ footer .soc a,footer .legal{border-color:rgba(255,255,255,.2)}
 
 <section id="contact"><h2>15. Contact</h2><p>Brandise · <a href="mailto:hello.brandise@gmail.com">hello.brandise@gmail.com</a> · <a href="https://wa.me/923142112664" target="_blank" rel="noopener noreferrer">+92 314 2112664</a> · <span class="ph">[YOUR BUSINESS ADDRESS]</span></p><p>See also our <a href="terms.html">Terms &amp; Conditions</a>.</p></section>
 </article></div></main>
-<footer><div class="w"><div class="fg"><div><a href="index.html" class="logo">Brandise<i>.</i></a><p style="margin-top:8px">Design. Market. Automate.</p></div>
+<footer><div class="w"><div class="fg"><div><a href="index.html" class="logo"><img src="logo-light.png" alt="Brandise" width="157" height="36"></a><p style="margin-top:8px;font-weight:500;color:#b8bdc9">Where Brands Rise</p></div>
 <ul><li><a href="index.html#services">Services</a></li><li><a href="projects.html">Work</a></li><li><a href="index.html#contact">Contact</a></li></ul>
 <div class="soc">
 <a href="https://www.instagram.com/brandisecreative/" target="_blank" rel="noopener noreferrer" aria-label="Brandise on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a>
