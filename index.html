@@ -370,7 +370,96 @@ footer .soc a,footer .legal{border-color:rgba(255,255,255,.2)}
 .wa-float:hover span,.wa-float:focus-visible span{max-width:150px;margin-left:10px}
 @media(min-width:601px){.legal{padding-right:84px}}
 @media(max-width:600px){.wa-float{right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px))}footer{padding-bottom:96px}}
-.svc .sl{display:inline-block;margin-top:14px;font-weight:600;font-size:14.5px;color:#2a5fe0;text-decoration:underline;text-underline-offset:4px}.svc:hover .sl{color:#fff}</style>
+.svc .sl{display:inline-block;margin-top:14px;font-weight:600;font-size:14.5px;color:#2a5fe0;text-decoration:underline;text-underline-offset:4px}.svc:hover .sl{color:#fff}.tc{flex:0 0 min(380px,86%);scroll-snap-align:start;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.05);border-radius:22px;padding:30px;display:flex;flex-direction:column;gap:16px}
+.ttrack{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 18px;margin-top:56px;scrollbar-width:none;outline-offset:6px}
+.ttrack::-webkit-scrollbar{display:none}
+.tb{width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:none;color:#fff;font-size:20px;cursor:pointer;transition:background .25s,border-color .25s,transform .25s}
+.tb:hover{background:#3f78fc;border-color:#3f78fc;transform:scale(1.06)}
+.tdots{display:flex;gap:8px;margin-left:auto}
+.tdot{width:10px;height:10px;border-radius:99px;border:0;padding:0;background:rgba(255,255,255,.3);cursor:pointer;transition:width .3s,background .3s}
+.tdot[aria-current=true]{background:#3f78fc;width:28px}
+@media(prefers-reduced-motion:reduce){.ttrack{scroll-behavior:auto}}
+
+/* Testimonials redesign */
+#testimonials{padding:120px 0}
+#testimonials::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:30px 30px;-webkit-mask-image:radial-gradient(ellipse at 20% 0%,#000 10%,transparent 65%);mask-image:radial-gradient(ellipse at 20% 0%,#000 10%,transparent 65%);pointer-events:none}
+#testimonials .w{z-index:1}
+.tc{position:relative;overflow:hidden;flex:0 0 min(400px,86%);scroll-snap-align:start;display:flex;flex-direction:column;gap:18px;padding:36px 32px 30px;border-radius:28px;border:1px solid rgba(255,255,255,.14);background:linear-gradient(160deg,rgba(255,255,255,.11),rgba(255,255,255,.02));
+ opacity:0;translate:0 44px;scale:.96;transition:transform .35s cubic-bezier(.2,.7,.2,1),translate .8s cubic-bezier(.2,.7,.2,1),scale .8s cubic-bezier(.2,.7,.2,1),opacity .8s,border-color .3s,box-shadow .35s;transition-delay:0s,calc(var(--ci,0)*.12s),calc(var(--ci,0)*.12s),calc(var(--ci,0)*.12s),0s,0s}
+#testimonials.go .tc{opacity:1;translate:0 0;scale:1}
+.tc::before{content:"\201C";position:absolute;top:-6px;right:20px;font-size:150px;line-height:1;font-weight:800;color:rgba(63,120,252,.3);pointer-events:none}
+.tc::after{content:"";position:absolute;left:0;top:0;height:3px;width:100%;background:linear-gradient(90deg,#3f78fc,#9bbcff,transparent);transform:scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.tc.act::after,.tc:hover::after{transform:scaleX(1)}
+.tc:hover{transform:translateY(-8px);border-color:#3f78fc;box-shadow:0 34px 60px -34px rgba(63,120,252,.75)}
+.tc.act{border-color:rgba(63,120,252,.75)}
+.tc .tstars{display:flex;align-items:center;gap:4px;color:#ffc94d;font-size:18px}
+.tc .tstars i{font-style:normal;display:inline-block;opacity:0;transform:scale(.2) rotate(-40deg)}
+#testimonials.go .tc .tstars i{animation:starpop .5s cubic-bezier(.2,1.5,.4,1) forwards;animation-delay:calc(var(--ci,0)*.12s + var(--i)*.07s + .35s)}
+@keyframes starpop{to{opacity:1;transform:none}}
+.tc .tnum{margin-left:8px;font-size:13px;font-weight:700;color:#fff;background:rgba(63,120,252,.35);padding:3px 10px;border-radius:99px}
+.tc blockquote{flex:1;position:relative;font-size:16.5px;font-weight:500;line-height:1.75;color:#eef1f8}
+.tc .tfoot{display:flex;align-items:center;gap:14px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12)}
+.tc .tav{flex:none;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:17px;color:#fff;background:linear-gradient(135deg,#3f78fc,#9bbcff);box-shadow:0 0 0 4px rgba(63,120,252,.22)}
+.tc .tn{font-weight:700;font-size:16px;color:#fff;letter-spacing:-.01em}.tc .tr{font-size:13px;color:#b8bdc9;line-height:1.4}
+.tc .tcc{margin-left:auto;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7da3ff;border:1px solid rgba(125,163,255,.45);padding:4px 10px;border-radius:99px;white-space:nowrap}
+.tsample{align-self:flex-start;font-size:11px;letter-spacing:.12em;text-transform:uppercase;background:#ffd86b;color:#3b2a00;padding:4px 10px;border-radius:99px;font-weight:700}
+@media(prefers-reduced-motion:reduce){.tc{opacity:1;translate:none;scale:1}.tc .tstars i{opacity:1;transform:none}}
+.tctrl{display:flex;align-items:center;gap:12px;margin-top:14px}.tc .tfoot{flex-wrap:wrap}.tc .tfoot>div:nth-child(2){min-width:0;flex:1}@media(max-width:600px){.tc .tcc{margin-left:66px}}
+/* ===== Motion layer ===== */
+.sp{position:fixed;left:0;top:0;height:3px;width:100%;transform-origin:left;transform:scaleX(0);background:linear-gradient(90deg,#3f78fc,#9bbcff);z-index:100;pointer-events:none}
+.hero h1 em{background:none;-webkit-text-fill-color:initial;color:inherit}
+.wd{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.14em;margin-bottom:-.14em}
+.wd>span{display:inline-block;transform:translateY(112%);animation:wup .95s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--w)*.08s + .2s)}
+.wd>span.g{background:linear-gradient(90deg,#3f78fc,#2a5fe0);-webkit-background-clip:text;background-clip:text;color:transparent}
+@keyframes wup{to{transform:none}}
+.rv h2{clip-path:inset(-8% 100% -22% 0);transition:clip-path 1.05s cubic-bezier(.7,0,.2,1)}
+.rv.in h2{clip-path:inset(-8% -3% -22% 0)}
+.rv .svc{opacity:0;translate:0 46px;transition:translate .8s cubic-bezier(.2,.7,.2,1),opacity .8s,background .3s,border-color .3s,transform .3s,color .3s;transition-delay:calc(var(--n,0)*.1s),calc(var(--n,0)*.1s),0s,0s,0s,0s}
+.rv.in .svc{opacity:1;translate:0 0}
+.svc:nth-child(1){--n:0}.svc:nth-child(2){--n:1}.svc:nth-child(3){--n:2}.svc:nth-child(4){--n:3}.svc:nth-child(5){--n:4}.svc:nth-child(6){--n:5}
+.rv .st b{scale:.4;opacity:0;transition:scale .6s cubic-bezier(.2,1.4,.4,1),opacity .5s;transition-delay:calc(var(--n,0)*.25s)}
+.rv.in .st b{scale:1;opacity:1}
+.st::before{transform-origin:left;transform:scaleX(0);transition:transform .9s cubic-bezier(.2,.7,.2,1) calc(var(--n,0)*.25s + .35s)}
+.rv.in .st::before{transform:scaleX(1)}
+.st:nth-child(1){--n:0}.st:nth-child(2){--n:1}.st:nth-child(3){--n:2}.st:nth-child(4){--n:3}
+.btn{transition:transform .2s,background .2s,translate .25s}
+.chap{position:fixed;left:18px;top:50%;transform:translateY(-50%);z-index:80;display:none;flex-direction:column;gap:6px}
+@media(min-width:1280px){.chap{display:flex}}
+.chap a{display:flex;align-items:center;gap:10px;height:24px}
+.chap a::before{content:"";flex:none;width:10px;height:10px;border-radius:50%;border:2px solid #3f78fc;background:transparent;transition:background .3s,transform .3s}
+.chap a span{opacity:0;transform:translateX(-8px);transition:opacity .25s,transform .25s;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#000;background:#fff;padding:5px 11px;border-radius:99px;box-shadow:0 6px 18px -6px rgba(0,0,0,.35);white-space:nowrap;pointer-events:none}
+.chap a:hover span,.chap a:focus-visible span{opacity:1;transform:none}
+.chap a.on::before{background:#3f78fc;transform:scale(1.35)}
+@media(prefers-reduced-motion:reduce){.wd>span{transform:none;animation:none}.rv h2{clip-path:none}.rv .svc{opacity:1;translate:none}.rv .st b{scale:1;opacity:1}.st::before{transform:none}}
+
+/* ===== Wow layer (no upward text motion) ===== */
+.rv{transform:scale(.975)}
+.tview{overflow:hidden;margin-top:56px;padding:16px 2px 40px;perspective:1400px;cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none;outline-offset:-4px}
+.tview:active{cursor:grabbing}
+.ttrack{display:flex;gap:22px;overflow:visible!important;scroll-snap-type:none;margin-top:0!important;padding:0!important;will-change:transform}
+.tc{scroll-snap-align:none;translate:0 0;rotate:y -28deg;scale:.9;transform-origin:left center;transition:transform .35s cubic-bezier(.2,.7,.2,1),rotate .9s cubic-bezier(.2,.7,.2,1),scale .9s cubic-bezier(.2,.7,.2,1),opacity .9s,border-color .3s,box-shadow .35s;transition-delay:0s,calc(var(--ci,0)*.12s),calc(var(--ci,0)*.12s),calc(var(--ci,0)*.12s),0s,0s}
+#testimonials.go .tc{opacity:1;rotate:0deg;scale:1;translate:0 0}
+.grid3{perspective:1400px}
+.rv .svc{opacity:0;translate:0 0;rotate:y -24deg;scale:.92;transform-origin:left center;transition:rotate .9s cubic-bezier(.2,.7,.2,1),scale .9s cubic-bezier(.2,.7,.2,1),opacity .8s,background .3s,border-color .3s,transform .3s,color .3s;transition-delay:calc(var(--n,0)*.1s),calc(var(--n,0)*.1s),calc(var(--n,0)*.1s),0s,0s,0s,0s}
+.rv.in .svc{opacity:1;rotate:0deg;scale:1}
+.lt{display:inline-block;text-align:center;overflow:hidden;white-space:nowrap;padding:.1em 0;margin:-.1em 0;vertical-align:top}.lt.g{background:linear-gradient(90deg,#3f78fc,#2a5fe0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.wdw{display:inline-block;white-space:nowrap}
+.hlight{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(63,120,252,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(63,120,252,.6) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(260px circle at var(--mx,-999px) var(--my,-999px),#000,transparent 72%);mask-image:radial-gradient(260px circle at var(--mx,-999px) var(--my,-999px),#000,transparent 72%)}
+.hv .c{transition:transform .25s ease-out}
+.c1{transform:translate3d(calc(var(--px,0)*16px),calc(var(--py,0)*12px),0) rotate(-5deg)}
+.c2{transform:translate3d(calc(var(--px,0)*34px),calc(var(--py,0)*22px),0) rotate(6deg)}
+.c3{transform:translate3d(calc(var(--px,0)*24px),calc(var(--py,0)*16px),0) rotate(-2deg)}
+.sw{opacity:.2;transition:opacity .3s}.sw.lit{opacity:1}
+#why h2{clip-path:none!important}#why h2 em{background:none;color:inherit}
+.sw.g{background:linear-gradient(90deg,#3f78fc,#a9c4ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+@media(prefers-reduced-motion:reduce){.rv{transform:none}.tc{opacity:1;rotate:none;scale:1}.rv .svc{opacity:1;rotate:none;scale:1}}
+.cur{position:fixed;left:0;top:0;z-index:300;pointer-events:none;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:#3f78fc;display:grid;place-items:center;opacity:0;transition:opacity .25s,width .4s cubic-bezier(.2,.9,.3,1.25),height .4s cubic-bezier(.2,.9,.3,1.25),margin .4s cubic-bezier(.2,.9,.3,1.25),background .3s,border-color .3s,box-shadow .3s}
+.cur span{font:700 11px/1 Montserrat,system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#fff;opacity:0;transition:opacity .2s;white-space:nowrap}
+.cur.on{opacity:1}
+.cur.sm{width:48px;height:48px;margin:-24px 0 0 -24px;background:rgba(63,120,252,.2);border:1.5px solid #3f78fc}
+.cur.lab{width:96px;height:96px;margin:-48px 0 0 -48px;box-shadow:0 16px 36px -12px rgba(63,120,252,.8)}.cur.lab span{opacity:1}
+.cur.inv{background:#fff}.cur.inv span{color:#3f78fc}.cur.sm.inv{background:rgba(255,255,255,.22);border-color:#fff}.cur.lab.inv{box-shadow:0 16px 36px -12px rgba(0,0,0,.45)}
+</style>
 </head>
 <body>
 <header><div class="w nav">
@@ -431,6 +520,12 @@ footer .soc a,footer .legal{border-color:rgba(255,255,255,.2)}
 <a href="https://www.behance.net/brandise" target="_blank" rel="noopener noreferrer" class="allwork" data-t="view_all_projects" style="margin-top:0"><span><small>Featured Portfolio</small>Explore all <em>projects</em></span><span class="ar" aria-hidden="true">→</span></a>
 </div></section>
 
+<section class="dk" id="testimonials" hidden><div class="w rv">
+<span class="eb">Client Feedback</span><h2>What clients say about <em>working with Brandise.</em></h2>
+<div class="ttrack" id="tg" tabindex="0" role="region" aria-label="Client testimonials, scroll horizontally"></div>
+<div class="tctrl"><button class="tb" id="tp" type="button" aria-label="Previous testimonial">←</button><button class="tb" id="tn" type="button" aria-label="Next testimonial">→</button><div class="tdots" id="td" aria-hidden="true"></div></div>
+</div></section>
+
 <section class="light" id="process"><div class="w rv">
 <span class="eb">Process</span><h2>Simple, predictable, <em>fast.</em></h2>
 <div class="steps"><div class="st"><b>01</b><h3>Discover</h3><p>A quick consultation to clarify your goals, scope, target audience, and deadlines.</p></div><div class="st"><b>02</b><h3>Strategize</h3><p>A detailed blueprint, milestone plan, and transparent fixed quote for your approval.</p></div><div class="st"><b>03</b><h3>Execute</h3><p>We design, develop, edit, and build with frequent progress updates and reviews.</p></div><div class="st"><b>04</b><h3>Scale</h3><p>We launch your assets, optimize performance, and automate ongoing workflows.</p></div></div>
@@ -476,6 +571,9 @@ footer .soc a,footer .legal{border-color:rgba(255,255,255,.2)}
 <a href="https://wa.me/923232789839" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a></div></div>
 <div class="legal"><span>© 2026 Brandise. All rights reserved.</span><div><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></div></div></div></footer>
 
+<div class="sp" id="sp" aria-hidden="true"></div>
+<nav class="chap" aria-label="Page sections"><a href="#top" data-t2=".hero"><span>01 Home</span></a><a href="#why" data-t2="#why"><span>02 Why us</span></a><a href="#services" data-t2="#services"><span>03 Services</span></a><a href="#work" data-t2="#work"><span>04 Work</span></a><a href="#process" data-t2="#process"><span>05 Process</span></a><a href="#faq" data-t2="#faq"><span>06 FAQ</span></a><a href="#contact" data-t2="#contact"><span>07 Contact</span></a></nav>
+
 <a class="wa-float" href="https://wa.me/923232789839?text=Hi%20Brandise%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" aria-label="Chat with Brandise on WhatsApp" data-t="whatsapp_click"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>Chat with us</span></a>
 
 <script>
@@ -511,7 +609,92 @@ if(!d.open){d.open=true;const h=dc.offsetHeight;a=dc.animate({height:["0px",h+"p
 else{const h=dc.offsetHeight;a=dc.animate({height:[h+"px","0px"],opacity:[1,0]},{duration:rm?0:300,easing:"ease-in",fill:"forwards"});a.onfinish=()=>{d.open=false;a.cancel();dc.style.overflow="";a=null}}})});
 })();
 
-(()=>{const io=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle("off",!e.isIntersecting)),{rootMargin:"120px"});document.querySelectorAll(".hero,.mq,.bl,.ow").forEach(el=>io.observe(el))})();
+(()=>{const io=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle("off",!e.isIntersecting)),{rootMargin:"120px"});document.querySelectorAll(".hero,.mq,.bl,.ow,#testimonials").forEach(el=>io.observe(el))})();
+
+/* Testimonials: hidden until you replace the sample entries with REAL client quotes and set LIVE=true */
+(()=>{const LIVE=true;
+const T=[
+{n:"James Mitchell",r:"Founder, Nexora Digital",c:"United Kingdom",s:4.8,sample:true,q:"Working with Brandise Creative has been a great experience. They understood what we were looking for without needing too much explanation. The designs were clean, modern, and delivered on time. Definitely a team I'd consider working with again."},
+{n:"Emily Carter",r:"Marketing Manager, Bloom & Co.",c:"USA",s:4.7,sample:true,q:"I really appreciate the creativity and attention to detail. We needed visuals that felt consistent with our brand, and Brandise delivered exactly that. Communication was smooth throughout the project, and the final designs looked fantastic."},
+{n:"Ahmed Al Mansoori",r:"Business Owner, Vertex Trading",c:"UAE",s:4.9,sample:true,q:"What I liked most was how they turned our ideas into something visually appealing. The branding and social media creatives were well thought out, and they were always open to feedback. A reliable creative team with a good understanding of business needs."},
+{n:"Hamza Farooq",r:"CEO, UrbanCart",c:"Pakistan",s:4.5,sample:true,q:"Honestly, finding a creative team that understands your vision and delivers without constant follow-ups is not easy. Brandise made the entire process simple. The designs were professional, and the overall experience was really good."},
+{n:"Sarah Khan",r:"Founder, The Style Edit",c:"Canada",s:5,sample:true,q:"Brandise brought a fresh perspective to our brand. From the initial concepts to the final designs, everything felt well organized. I especially liked their approach to typography, layouts, and overall visual consistency. Really happy with the collaboration."}];
+const prev=new URLSearchParams(location.search).get("preview")==="testimonials";
+const sec=document.getElementById("testimonials"),g=document.getElementById("tg");
+if(!sec||!g||!T.length||(!LIVE&&!prev))return;
+const el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x)e.textContent=x;return e};
+T.forEach((t,ci)=>{const c=el("article","tc");c.style.setProperty("--ci",ci);
+if(t.s){const st=el("div","tstars");for(let k=0;k<Math.round(t.s);k++){const i=el("i","","★");i.style.setProperty("--i",k);st.append(i)}st.append(el("span","tnum",t.s.toFixed(1)));c.append(st)}
+c.append(el("blockquote","",t.q));
+const f=el("div","tfoot"),w=el("div");w.append(el("div","tn",t.n),el("div","tr",t.r));
+f.append(el("div","tav",t.n.split(" ").map(x=>x[0]).slice(0,2).join("")),w,el("span","tcc",t.c));c.append(f);g.append(c)});
+const tp=document.getElementById("tp"),tn=document.getElementById("tn"),dots=document.getElementById("td");
+const rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+sec.hidden=false;
+const view=document.createElement("div");view.className="tview";view.tabIndex=0;view.setAttribute("role","region");view.setAttribute("aria-label","Client testimonials: drag or use the arrow keys");
+g.removeAttribute("tabindex");g.removeAttribute("role");g.removeAttribute("aria-label");g.parentNode.insertBefore(view,g);view.append(g);
+const real=[...g.children],n=real.length;real.forEach((c,k)=>c.dataset.i=k);
+const mk=c=>{const k=c.cloneNode(true);k.setAttribute("aria-hidden","true");return k};
+g.prepend(...real.map(mk));g.append(...real.map(mk));
+real.forEach((c,k)=>{const d=el("button","tdot");d.type="button";d.tabIndex=-1;d.onclick=()=>{last=Date.now();go(k)};dots.append(d)});
+let i=0,busy=false,step=0,drag=null,last=0,hov=false,vis=false;
+const measure=()=>{step=real[0].offsetWidth+22};
+const pos=(x,anim)=>{g.style.transition=anim&&!rm?"transform .75s cubic-bezier(.2,.8,.2,1)":"none";g.style.transform="translate3d("+(-(n+x)*step)+"px,0,0)"};
+const mark=()=>{const k=((i%n)+n)%n;[...dots.children].forEach((d,x)=>d.setAttribute("aria-current",x===k));[...g.children].forEach(c=>c.classList.toggle("act",+c.dataset.i===k))};
+const go=to=>{if(busy)return;busy=true;i=to;pos(i,true);mark();setTimeout(()=>{if(i<0||i>=n){i=((i%n)+n)%n;pos(i,false)}busy=false},rm?0:780)};
+measure();pos(0,false);mark();addEventListener("resize",()=>{measure();pos(i,false)});
+tp.onclick=()=>{last=Date.now();go(i-1)};tn.onclick=()=>{last=Date.now();go(i+1)};
+view.addEventListener("keydown",e=>{if(e.key==="ArrowRight"){e.preventDefault();tn.click()}if(e.key==="ArrowLeft"){e.preventDefault();tp.click()}});
+view.addEventListener("pointerdown",e=>{if(busy)return;drag={x:e.clientX,base:-(n+i)*step,dx:0};last=Date.now();view.setPointerCapture(e.pointerId);g.style.transition="none"});
+view.addEventListener("pointermove",e=>{if(!drag)return;drag.dx=e.clientX-drag.x;g.style.transform="translate3d("+(drag.base+drag.dx)+"px,0,0)"});
+const fin=()=>{if(!drag)return;const dx=drag.dx;drag=null;if(dx<-60)go(i+1);else if(dx>60)go(i-1);else pos(i,true)};
+view.addEventListener("pointerup",fin);view.addEventListener("pointercancel",fin);
+view.addEventListener("pointerenter",()=>hov=true);view.addEventListener("pointerleave",()=>hov=false);view.addEventListener("focusin",()=>hov=true);view.addEventListener("focusout",()=>hov=false);
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){sec.classList.add("go");o.disconnect()}}),{threshold:.2}).observe(sec);
+new IntersectionObserver(es=>es.forEach(e=>vis=e.isIntersecting)).observe(sec);
+if(!rm)setInterval(()=>{if(hov||!vis||busy||drag||Date.now()-last<8000)return;go(i+1)},5500)})();
+
+/* Motion layer */
+(()=>{const rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+const sp=document.getElementById("sp");let tk=false;
+const prog=()=>{const h=document.documentElement.scrollHeight-innerHeight;sp.style.transform="scaleX("+(h>0?Math.min(1,scrollY/h):0)+")";tk=false};
+addEventListener("scroll",()=>{if(!tk){tk=true;requestAnimationFrame(prog)}},{passive:true});prog();
+
+if(!rm){const io=new IntersectionObserver((es,o)=>es.forEach(e=>{if(!e.isIntersecting)return;o.unobserve(e.target);const b=e.target,end=+b.dataset.end,suf=b.dataset.suf,t0=performance.now();const step=t=>{const k=Math.min(1,(t-t0)/1300),v=Math.round(end*(1-Math.pow(1-k,3)));b.textContent=v+suf;if(k<1)requestAnimationFrame(step)};requestAnimationFrame(step)}),{threshold:.6});
+document.querySelectorAll(".stat b").forEach(b=>{const m=b.textContent.trim().match(/^(\d+)([^\d\/]*)$/);if(!m)return;b.dataset.end=m[1];b.dataset.suf=m[2];b.textContent="0"+m[2];io.observe(b)})}
+if(matchMedia("(hover:hover) and (pointer:fine)").matches&&!rm)document.querySelectorAll(".btn.p,.btn.o").forEach(b=>{b.addEventListener("pointermove",e=>{const r=b.getBoundingClientRect();b.style.translate=((e.clientX-r.left-r.width/2)*.18)+"px "+((e.clientY-r.top-r.height/2)*.3)+"px"});b.addEventListener("pointerleave",()=>{b.style.translate=""})});
+const links=[...document.querySelectorAll(".chap a")];const spy=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(l=>l.classList.toggle("on",l.dataset.t2&&document.querySelector(l.dataset.t2)===e.target))}),{rootMargin:"-45% 0px -50% 0px"});
+links.forEach(l=>{const t=document.querySelector(l.dataset.t2);if(t)spy.observe(t)})})();
+
+/* Wow layer */
+(()=>{const rm=matchMedia("(prefers-reduced-motion:reduce)").matches,fine=matchMedia("(hover:hover) and (pointer:fine)").matches;
+const raf=f=>{let r=0;return(...a)=>{if(r)return;r=requestAnimationFrame(()=>{r=0;f(...a)})}};
+/* 1. Hero headline decodes from random characters (no upward motion) */
+const h=document.querySelector(".hero h1");
+if(h&&!rm){h.setAttribute("aria-label",h.textContent.replace(/\s+/g," ").trim());const L=[];
+const walk=(node,em)=>[...node.childNodes].forEach(ch=>{if(ch.nodeType===3){const f=document.createDocumentFragment();ch.textContent.split(/(\s+)/).forEach(w=>{if(!w)return;if(/^\s+$/.test(w)){f.append(" ");return}const o=document.createElement("span");o.className="wdw";[...w].forEach(c=>{const x=document.createElement("span");x.className="lt"+(em?" g":"");x.textContent=c;x.dataset.c=c;x.setAttribute("aria-hidden","true");o.append(x);L.push(x)});f.append(o)});ch.replaceWith(f)}else if(ch.nodeType===1)walk(ch,em||ch.tagName==="EM")});
+walk(h,false);const w=L.map(x=>x.getBoundingClientRect().width);L.forEach((x,k)=>x.style.width=w[k]+"px");
+const G="ABCDEFGHJKLNPRSTUVXYZ0123456789*+/";const t0=performance.now();const when=L.map((_,k)=>350+k*30+Math.random()*140);
+const iv=setInterval(()=>{const t=performance.now()-t0;let left=0;L.forEach((x,k)=>{if(x.dataset.d)return;if(t>=when[k]){x.textContent=x.dataset.c;x.dataset.d=1;x.style.width=""}else{left++;x.textContent=G[Math.floor(Math.random()*G.length)]}});if(!left)clearInterval(iv)},45)}
+/* 2. Scroll-linked word fill in the Why section */
+const wh=document.querySelector("#why h2");
+if(wh&&!rm){const S=[];const walk=(node,em)=>[...node.childNodes].forEach(ch=>{if(ch.nodeType===3){const f=document.createDocumentFragment();ch.textContent.split(/(\s+)/).forEach(p=>{if(!p)return;if(/^\s+$/.test(p)){f.append(" ");return}const o=document.createElement("span");o.className="sw"+(em?" g":"");o.textContent=p;f.append(o);S.push(o)});ch.replaceWith(f)}else if(ch.nodeType===1)walk(ch,em||ch.tagName==="EM")});
+walk(wh,false);const upd=raf(()=>{const r=wh.getBoundingClientRect(),p=Math.min(1,Math.max(0,(innerHeight*.88-r.top)/(innerHeight*.42))),k=Math.round(p*S.length);S.forEach((x,i)=>x.classList.toggle("lit",i<k))});addEventListener("scroll",upd,{passive:true});upd()}
+if(fine&&!rm){
+/* 3. Spotlight grid + depth parallax in the hero */
+const hero=document.querySelector(".hero");
+if(hero){const Lg=document.createElement("div");Lg.className="hlight";hero.prepend(Lg);const mv=raf(e=>{const r=hero.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;hero.style.setProperty("--mx",x+"px");hero.style.setProperty("--my",y+"px");const hv=hero.querySelector(".hv");if(hv){hv.style.setProperty("--px",((x/r.width)-.5)*2);hv.style.setProperty("--py",((y/r.height)-.5)*2)}});hero.addEventListener("pointermove",e=>mv({clientX:e.clientX,clientY:e.clientY}))}
+/* 4. Morphing label cursor: a dot that grows into a labelled bubble */
+const c=document.createElement("div");c.className="cur";c.innerHTML="<span></span>";document.body.append(c);const lb=c.firstChild;
+let tx=0,ty=0,x=0,y=0,rf=0,sig="";
+const loop=()=>{x+=(tx-x)*.2;y+=(ty-y)*.2;c.style.transform="translate3d("+x+"px,"+y+"px,0)";rf=(Math.abs(tx-x)>.3||Math.abs(ty-y)>.3)?requestAnimationFrame(loop):0};
+const R=[[".tview","Drag ↔","lab",0],[".wa-float","Chat","lab",1],[".btn","","sm",0],[".allwork","View ↗","lab",1],["summary,.sl","","sm",0],[".svc","Explore","lab",1],["a,button,label,input,select,textarea","","sm",0]];
+addEventListener("pointermove",e=>{tx=e.clientX;ty=e.clientY;let k="",l="",inv=!!(e.target.closest&&e.target.closest(".bl"));
+for(const r of R){if(e.target.closest&&e.target.closest(r[0])){l=r[1];k=r[2];if(r[3])inv=true;break}}
+const sg=k+l+inv;if(sg!==sig){sig=sg;c.className="cur on "+k+(inv?" inv":"");lb.textContent=l}else c.classList.add("on");
+if(!rf)rf=requestAnimationFrame(loop)},{passive:true});
+document.addEventListener("mouseleave",()=>c.classList.remove("on"))}
+})();
 </script>
 </body>
 </html>
