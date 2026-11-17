@@ -1,7 +1,4 @@
 User-agent: *
 Allow: /
 
-# Do not index the broken backup file
-Disallow: /index-broken-backup.html
-
-Sitemap: https://usman-ghani200.github.io/brandise-web/sitemap.xml
+Sitemap: https://brandisecreative.com/sitemap.xml
