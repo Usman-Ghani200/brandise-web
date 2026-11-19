@@ -250,8 +250,24 @@ form{background:var(--card);border:1px solid var(--line);border-radius:22px;padd
 label{font-size:13.5px;font-weight:500;display:grid;gap:7px}
 input,select,textarea{font:inherit;color:var(--ink);background:#f5f7fb;border:1px solid var(--line);border-radius:12px;padding:13px 14px;min-height:48px;width:100%}
 input:focus,select:focus,textarea:focus{outline:2px solid var(--acc);border-color:transparent}
-.err{color:#d93025;font-size:12.5px;min-height:0}.hp{position:absolute;left:-9999px}
-#ok{display:none;padding:16px;border-radius:12px;background:rgba(80,200,140,.15);border:1px solid rgba(80,200,140,.4)}
+input[aria-invalid="true"],select[aria-invalid="true"],textarea[aria-invalid="true"]{border-color:#d93025;background:#fff8f7}
+.err{color:#d93025;font-size:12.5px;font-weight:500;min-height:0;display:block}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
+#form-status{margin-top:6px}
+#ok,#form-err,#form-no-endpoint{padding:18px 20px;border-radius:14px;font-size:14.5px;line-height:1.55}
+.status-content{display:flex;align-items:flex-start;gap:14px}
+.status-icon{font-size:22px;line-height:1;flex-shrink:0}
+.status-content strong{display:block;font-size:15px;margin-bottom:4px}
+.status-content p{margin:4px 0 0;color:var(--dkm);font-size:14px}
+.status-fallbacks{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px;font-size:13.5px}
+.status-fallbacks a{color:var(--acc2);text-decoration:underline;text-underline-offset:3px;font-weight:600}
+#ok{display:none;background:rgba(46,125,50,.08);border:1px solid rgba(46,125,50,.35);color:#1b5e20}
+#ok p{color:#2e7d32}
+#form-err{display:none;background:rgba(217,48,37,.08);border:1px solid rgba(217,48,37,.35);color:#b3261e}
+#form-err p{color:#5f6368}
+#form-no-endpoint{display:none;background:rgba(230,124,115,.1);border:1px solid rgba(230,124,115,.4);color:#a52714}
+#form-no-endpoint p{color:#4b5160}
+button[type="submit"]:disabled{opacity:.75;cursor:not-allowed;transform:none}
 .ci{margin-top:34px;display:grid;gap:12px;color:var(--mut);font-size:15.5px}.ci a{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
 footer{border-top:1px solid var(--line);padding:56px 0 34px;color:var(--mut);font-size:14.5px}
 .fg{display:flex;flex-wrap:wrap;justify-content:space-between;gap:34px}.fg ul{display:flex;gap:26px;flex-wrap:wrap}.fg a:hover,.legal a:hover{color:var(--ink)}
@@ -544,27 +560,87 @@ footer .soc a,footer .legal{border-color:rgba(255,255,255,.2)}
 
 <section id="contact"><div class="w cgrid rv">
 <div><span class="eb">Contact</span><h2>Let's build <em>something extraordinary.</em></h2><p class="lead">Tell us about your project goals. You will receive a detailed proposal and quote within 24 hours.</p>
-<div class="ci"><span>Email: <a data-email href="mailto:hello@brandisecreative.com">hello@brandisecreative.com</a></span><span>WhatsApp: <a href="https://wa.me/923232789839?text=Hi%20Brandise%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" data-t="whatsapp_click">+92 323 2789839</a></span><span>Serving businesses across the US &amp; worldwide</span></div>
+<div class="ci"><span>WhatsApp: <a href="https://wa.me/923232789839?text=Hi%20Brandise%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" data-t="whatsapp_click">+92 323 2789839</a></span><span>Serving businesses across the US &amp; worldwide</span></div>
 <a class="btn o" style="margin-top:28px" href="https://wa.me/923232789839?text=Hi%20Brandise%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" data-t="whatsapp_click">Chat on WhatsApp</a></div>
-<form id="fm" novalidate><div class="row"><label>Name<input name="name" required autocomplete="name"><span class="err"></span></label><label>Business name<input name="business" autocomplete="organization"></label></div>
-<div class="row"><label>Email<input type="email" name="email" required autocomplete="email"><span class="err"></span></label><label>WhatsApp number<input type="tel" name="phone" autocomplete="tel"></label></div>
-<label>Service needed<select name="service" id="sv">
-<option>Brand Design</option>
-<option>Web App Dev</option>
-<option>Video Editing</option>
-<option>Social Media</option>
-<option>Performance Marketing</option>
-<option>AI Automation</option>
-<option>Multiple / Not sure</option>
-</select></label>
-<label>Message<textarea name="message" rows="4" required placeholder="Tell us about your project goals, required deliverables, and timeline..."></textarea><span class="err"></span></label>
-<input class="hp" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
-<button class="btn p" type="submit">Send Inquiry →</button><div id="ok" role="status" style="display:none">✅ Thank you! Your message has been received. We'll reply within one business day.</div>
-<div id="form-no-endpoint" role="alert" style="display:none;padding:16px;border-radius:12px;background:rgba(255,180,0,.12);border:1px solid rgba(255,160,0,.5);font-size:14px;line-height:1.6">
-  <strong>Online form is not yet active.</strong> Please contact us directly:<br>
-  📧 <a href="mailto:hello@brandisecreative.com">hello@brandisecreative.com</a> &nbsp;|&nbsp;
-  💬 <a href="https://wa.me/923232789839?text=Hi%20Brandise%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer">WhatsApp: +92 323 2789839</a>
-</div></form>
+<form id="fm" novalidate>
+<div class="row">
+  <label for="f-name">Name *
+    <input id="f-name" name="name" required autocomplete="name" placeholder="Your name or organization lead" aria-describedby="f-name-err">
+    <span class="err" id="f-name-err" role="alert"></span>
+  </label>
+  <label for="f-business">Business name
+    <input id="f-business" name="business" autocomplete="organization" placeholder="e.g. Acme Corp (optional)">
+  </label>
+</div>
+<div class="row">
+  <label for="f-email">Work Email *
+    <input id="f-email" type="email" name="email" required autocomplete="email" placeholder="you@company.com" aria-describedby="f-email-err">
+    <span class="err" id="f-email-err" role="alert"></span>
+  </label>
+  <label for="f-phone">WhatsApp or Phone number
+    <input id="f-phone" type="tel" name="phone" autocomplete="tel" placeholder="+1 (555) 000-0000 (optional)" aria-describedby="f-phone-err">
+    <span class="err" id="f-phone-err" role="alert"></span>
+  </label>
+</div>
+<label for="sv">Service needed
+  <select name="service" id="sv">
+    <option value="Brand Design">Brand Design</option>
+    <option value="Web App Dev">Web App Dev</option>
+    <option value="Video Editing">Video Editing</option>
+    <option value="Social Media">Social Media</option>
+    <option value="Performance Marketing">Performance Marketing</option>
+    <option value="AI Automation">AI Automation</option>
+    <option value="Multiple / Not sure">Multiple / Not sure</option>
+  </select>
+</label>
+<label for="f-msg">Project details &amp; goals *
+  <textarea id="f-msg" name="message" rows="4" required placeholder="Tell us about your project goals, required deliverables, and timeline..." aria-describedby="f-msg-err"></textarea>
+  <span class="err" id="f-msg-err" role="alert"></span>
+</label>
+
+<!-- Anti-spam honeypot: Formspree _gotcha field -->
+<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
+
+<button class="btn p" id="btn-submit" type="submit">Send Inquiry →</button>
+
+<div id="form-status" role="region" aria-live="polite" aria-atomic="true">
+  <div id="ok" role="status">
+    <div class="status-content">
+      <span class="status-icon" aria-hidden="true">✅</span>
+      <div>
+        <strong>Thank you! Your inquiry has been received.</strong>
+        <p>Our team will review your project details and email you a customized proposal within 24 hours.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="form-err" role="alert">
+    <div class="status-content">
+      <span class="status-icon" aria-hidden="true">⚠️</span>
+      <div>
+        <strong id="form-err-title">Submission could not be completed.</strong>
+        <p id="form-err-msg">Your information has been preserved. Please try again or reach out directly:</p>
+        <div class="status-fallbacks">
+          <a href="https://wa.me/923232789839?text=Hi%20Brandise%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer">💬 WhatsApp (+92 323 2789839)</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="form-no-endpoint" role="alert">
+    <div class="status-content">
+      <span class="status-icon" aria-hidden="true">ℹ️</span>
+      <div>
+        <strong>Online form submissions are temporarily offline.</strong>
+        <p>We are actively taking projects via WhatsApp. Please message us directly:</p>
+        <div class="status-fallbacks">
+          <a href="https://wa.me/923232789839?text=Hi%20Brandise%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer">💬 WhatsApp (+92 323 2789839)</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
 </div></section>
 </main>
 <footer><div class="w"><div class="fg"><div><a href="#top" class="logo"><img src="logo-light.png" alt="Brandise" width="157" height="36" loading="lazy"></a><p style="margin-top:8px;font-weight:500;color:#b8bdc9">Where Brands Rise</p></div>
@@ -583,12 +659,22 @@ footer .soc a,footer .legal{border-color:rgba(255,255,255,.2)}
 <a class="wa-float" href="https://wa.me/923232789839?text=Hi%20Brandise%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" aria-label="Chat with Brandise on WhatsApp" data-t="whatsapp_click"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>Chat with us</span></a>
 
 <script>
-/* -- CONFIGURATION ---------------------------------------------------------
-   ENDPOINT : Your Formspree endpoint, e.g. "https://formspree.io/f/YOUR_ID"
-   GA_ID    : Google Analytics 4 Measurement ID, e.g. "G-XXXXXXXXXX"
-   PIXEL_ID : Meta Pixel ID (optional)
-   -------------------------------------------------------------------------- */
-const EMAIL="hello@brandisecreative.com",ENDPOINT="",GA_ID="",PIXEL_ID="";
+/* ==========================================================================
+   BRANDISE INTEGRATION CONFIGURATION
+   ==========================================================================
+   FORMSPREE_ENDPOINT : Set to your Formspree form endpoint URL, e.g.:
+                        "https://formspree.io/f/mqkvrxyz"
+                        Leave as "YOUR_FORMSPREE_ENDPOINT" until configured.
+                        Until it is set, the form will NOT fake any success —
+                        it will show the direct-contact fallback instead.
+   EMAIL              : Official business receiving mailbox.
+   GA_ID              : Google Analytics 4 Measurement ID (optional, e.g. "G-XXXXXXXXXX").
+   PIXEL_ID           : Meta Pixel ID (optional).
+   ========================================================================== */
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mnpdzrqv";
+const EMAIL = "hello@brandisecreative.com";
+const GA_ID = "";
+const PIXEL_ID = "";
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 $$("[data-email]").forEach(a=>{a.textContent=EMAIL;a.href="mailto:"+EMAIL});
 const track=n=>{try{window.gtag&&gtag("event",n);window.fbq&&fbq("trackCustom",n)}catch(e){}};
@@ -606,26 +692,211 @@ if(bg&&lk){
   document.addEventListener("keydown",e=>{if(e.key==="Escape")closeNav()});
   document.addEventListener("click",e=>{if(!lk.contains(e.target)&&!bg.contains(e.target)&&lk.classList.contains("open"))closeNav()});
 }
-$$("[data-svc]").forEach(a=>a.addEventListener("click",()=>{$("#sv").value=a.dataset.svc}));
-const fm=$("#fm");
-fm.onsubmit=async e=>{e.preventDefault();let ok=true;
-fm.querySelectorAll("[required]").forEach(f=>{const m=f.parentElement.querySelector(".err");const bad=!f.value.trim()||(f.type==="email"&&!/^\S+@\S+\.\S+$/.test(f.value));m.textContent=bad?"Please enter a valid "+f.name+".":"";if(bad)ok=false});
-if(!ok||fm.botcheck.value)return;
-const d=Object.fromEntries(new FormData(fm));
-const btn=fm.querySelector("[type=submit]");
-if(!ENDPOINT){
-  /* ⚠️ Formspree endpoint not yet configured.
-     To activate the form: sign up at formspree.io, create a form,
-     then set ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID" above.
-     Until then, we show the fallback notice — NEVER a fake success. */
-  const notice=document.getElementById("form-no-endpoint");
-  if(notice){notice.style.display="block";notice.scrollIntoView({behavior:"smooth",block:"nearest"})}
-  return;
+const svcMap = {
+  "Design": "Brand Design",
+  "Web App Dev": "Web App Dev",
+  "Video Editing": "Video Editing",
+  "Social Media": "Social Media",
+  "Marketing": "Performance Marketing",
+  "AI Automation": "AI Automation"
+};
+$$("[data-svc]").forEach(a => a.addEventListener("click", () => {
+  const target = svcMap[a.dataset.svc] || a.dataset.svc;
+  const sel = $("#sv");
+  if (sel) {
+    for (let opt of sel.options) {
+      if (opt.value === target || opt.text === target || opt.value === a.dataset.svc) {
+        sel.value = opt.value;
+        break;
+      }
+    }
+  }
+}));
+
+const fm = $("#fm");
+if (fm) {
+  const btn = $("#btn-submit") || fm.querySelector("[type=submit]");
+  const okBox = $("#ok");
+  const errBox = $("#form-err");
+  const noEndpointBox = $("#form-no-endpoint");
+  const errMsg = $("#form-err-msg");
+  let isSubmitting = false;
+
+  const hideAllStatus = () => {
+    if (okBox) okBox.style.display = "none";
+    if (errBox) errBox.style.display = "none";
+    if (noEndpointBox) noEndpointBox.style.display = "none";
+  };
+
+  const isConfigured = () => {
+    return typeof FORMSPREE_ENDPOINT === "string" &&
+           FORMSPREE_ENDPOINT.trim() !== "" &&
+           FORMSPREE_ENDPOINT !== "YOUR_FORMSPREE_ENDPOINT" &&
+           !FORMSPREE_ENDPOINT.includes("YOUR_") &&
+           FORMSPREE_ENDPOINT.startsWith("https://formspree.io/");
+  };
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  const phoneRegex = /^[\d\s\+\-\(\)\.]{7,24}$/;
+
+  const validateField = (field) => {
+    const name = field.name;
+    const val = field.value.trim();
+    let error = "";
+
+    if (name === "name") {
+      if (!val) error = "Please enter your name.";
+      else if (val.length < 2) error = "Name must be at least 2 characters.";
+    } else if (name === "email") {
+      if (!val) error = "Please enter your work email.";
+      else if (!emailRegex.test(val)) error = "Please enter a valid email address (e.g. name@domain.com).";
+    } else if (name === "phone") {
+      if (val && !phoneRegex.test(val)) error = "Please enter a valid phone or WhatsApp number, or leave blank.";
+    } else if (name === "message") {
+      if (!val) error = "Please share your project goals or inquiry.";
+      else if (val.length < 10) error = "Please provide a little more detail about your project (at least 10 characters).";
+    }
+
+    const errSpan = document.getElementById(field.id + "-err");
+    if (error) {
+      field.setAttribute("aria-invalid", "true");
+      if (errSpan) errSpan.textContent = error;
+      return false;
+    } else {
+      field.removeAttribute("aria-invalid");
+      if (errSpan) errSpan.textContent = "";
+      return true;
+    }
+  };
+
+  // Real-time feedback on input and blur
+  ["name", "email", "phone", "message"].forEach(fname => {
+    const field = fm.elements[fname];
+    if (field) {
+      field.addEventListener("input", () => {
+        if (field.getAttribute("aria-invalid") === "true") {
+          validateField(field);
+        }
+      });
+      field.addEventListener("blur", () => {
+        if (field.value.trim() !== "") {
+          validateField(field);
+        }
+      });
+    }
+  });
+
+  fm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (isSubmitting) return;
+
+    hideAllStatus();
+
+    // 1. Anti-spam honeypot verification
+    const gotcha = fm.elements["_gotcha"];
+    if (gotcha && gotcha.value) {
+      // Automated bot detected: silently discard
+      console.warn("Spam submission blocked.");
+      return;
+    }
+
+    // 2. Validate all fields
+    let isValid = true;
+    let firstInvalid = null;
+    ["name", "email", "phone", "message"].forEach(fname => {
+      const field = fm.elements[fname];
+      if (field) {
+        const fieldOk = validateField(field);
+        if (!fieldOk && !firstInvalid) {
+          firstInvalid = field;
+          isValid = false;
+        } else if (!fieldOk) {
+          isValid = false;
+        }
+      }
+    });
+
+    if (!isValid) {
+      if (firstInvalid) firstInvalid.focus();
+      return;
+    }
+
+    // 3. Endpoint Configuration Check
+    if (!isConfigured()) {
+      /* Formspree endpoint is not yet configured.
+         Explain clearly that online submissions are not active yet,
+         and provide the direct email & WhatsApp options.
+         NEVER display fake success. */
+      if (noEndpointBox) {
+        noEndpointBox.style.display = "block";
+        noEndpointBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+      return;
+    }
+
+    // 4. Submission
+    isSubmitting = true;
+    btn.disabled = true;
+    btn.setAttribute("aria-busy", "true");
+    const origText = btn.textContent;
+    btn.textContent = "Sending inquiry…";
+
+    try {
+      const formData = new FormData(fm);
+
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Accept": "application/json"
+        },
+        body: formData
+      });
+
+      if (res.ok) {
+        fm.reset();
+        ["name", "email", "phone", "message"].forEach(fname => {
+          const field = fm.elements[fname];
+          if (field) {
+            field.removeAttribute("aria-invalid");
+            const errSpan = document.getElementById(field.id + "-err");
+            if (errSpan) errSpan.textContent = "";
+          }
+        });
+        if (okBox) {
+          okBox.style.display = "block";
+          okBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+        track("form_submit");
+      } else {
+        let errorDetail = "Server returned status " + res.status;
+        try {
+          const data = await res.json();
+          if (data && data.errors && data.errors.length) {
+            errorDetail = data.errors.map(x => x.message || x.field).join(", ");
+          } else if (data && data.error) {
+            errorDetail = data.error;
+          }
+        } catch (_) {}
+        if (errMsg) errMsg.textContent = "Submission could not be completed (" + errorDetail + "). Your entered information was preserved. Please try again or reach out directly:";
+        if (errBox) {
+          errBox.style.display = "block";
+          errBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+      }
+    } catch (networkErr) {
+      if (errMsg) errMsg.textContent = "A connection error occurred. Your entered information was preserved. Please check your internet or reach out directly:";
+      if (errBox) {
+        errBox.style.display = "block";
+        errBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+    } finally {
+      isSubmitting = false;
+      btn.disabled = false;
+      btn.removeAttribute("aria-busy");
+      btn.textContent = origText;
+    }
+  });
 }
-btn.disabled=true;btn.textContent="Sending…";
-fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(d)})
-.then(r=>{btn.disabled=false;btn.textContent="Send Inquiry →";if(!r.ok)throw new Error("Server error "+r.status);fm.reset();const ok2=document.getElementById("ok");if(ok2)ok2.style.display="block";track("form_submit")})
-.catch(x=>{btn.disabled=false;btn.textContent="Send Inquiry →";alert("Sorry, something went wrong. Please email "+EMAIL+" or message us on WhatsApp.")});};
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.1});$$(".rv").forEach(el=>io.observe(el));
 addEventListener("load",()=>setTimeout(()=>{
 if(GA_ID){const s=document.createElement("script");s.async=1;s.src="https://www.googletagmanager.com/gtag/js?id="+GA_ID;document.head.append(s);window.dataLayer=[];window.gtag=function(){dataLayer.push(arguments)};gtag("js",new Date());gtag("config",GA_ID)}
