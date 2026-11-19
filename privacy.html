@@ -17,6 +17,7 @@
 <meta name="twitter:description" content="Privacy Policy for Brandise Creative. Learn how we collect, use, and protect your personal information.">
 <meta name="twitter:image" content="https://brandisecreative.com/og-image.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%233f78fc'/%3E%3Ctext x='32' y='45' font-size='38' font-family='Georgia' font-weight='700' text-anchor='middle' fill='white'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -146,7 +147,7 @@ footer .soc a,footer .legal{border-color:rgba(255,255,255,.2)}
 <p style="margin-top:20px">See also our <a href="terms.html">Terms &amp; Conditions</a>.</p>
 </section>
 </article></div></main>
-<footer><div class="w"><div class="fg"><div><a href="index.html" class="logo"><img src="logo-light.png" alt="Brandise" width="157" height="36"></a><p style="margin-top:8px;font-weight:500;color:#b8bdc9">Where Brands Rise</p></div>
+<footer><div class="w"><div class="fg"><div><a href="index.html" class="logo"><img src="logo-light.png" alt="Brandise" width="157" height="36" loading="lazy"></a><p style="margin-top:8px;font-weight:500;color:#b8bdc9">Where Brands Rise</p></div>
 <ul><li><a href="index.html#services">Services</a></li><li><a href="projects.html">Work</a></li><li><a href="index.html#contact">Contact</a></li></ul>
 <div class="soc">
 <a href="https://www.behance.net/brandisecreative" target="_blank" rel="noopener noreferrer" aria-label="Brandise on Behance"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-4.971 3-3.459 0-5.69-2.316-5.69-5.918 0-3.64 2.298-6.082 5.568-6.082 3.493 0 5.342 2.455 5.176 5.864h-7.795c.08 1.83 1.258 2.871 2.922 2.871 1.241 0 2.072-.544 2.518-1.55l2.282 1.815zm-7.733-4.664h4.743c-.097-1.353-.873-2.128-2.318-2.128-1.467 0-2.327.77-2.425 2.128zm-11.993 7.664h-4v-14h4.896c2.476 0 4.104 1.255 4.104 3.447 0 1.341-.659 2.378-1.846 2.923 1.572.484 2.346 1.769 2.346 3.393 0 2.502-1.813 4.237-5.5 4.237zm-1.25-8.326h1.968c1.332 0 2.158-.619 2.158-1.745 0-1.077-.811-1.688-2.115-1.688h-2.011v3.433zm0 2.311v3.771h2.261c1.385 0 2.294-.65 2.294-1.875 0-1.293-.974-1.896-2.404-1.896h-2.151z"/></svg></a>
@@ -155,5 +156,17 @@ footer .soc a,footer .legal{border-color:rgba(255,255,255,.2)}
 <a href="https://www.linkedin.com/company/brandisecreative" target="_blank" rel="noopener noreferrer" aria-label="Brandise on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 9h4v11H4zM6 3.5a2.2 2.2 0 110 4.4 2.2 2.2 0 010-4.4zM10 9h3.8v1.6c.6-1.1 2-1.9 3.7-1.9 3.3 0 3.5 2.2 3.5 4.6V20h-4v-6c0-1.4 0-2.7-1.6-2.7S14 12.5 14 14v6h-4z"/></svg></a>
 <a href="https://wa.me/923232789839" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 21l1.5-4.6A8.5 8.5 0 1 1 8 19.6z"/></svg></a></div></div>
 <div class="legal"><span>© 2026 Brandise. All rights reserved.</span><div><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></div></div></div></footer>
-<script>const bg=document.getElementById("bg"),lk=document.getElementById("lk");bg.onclick=()=>{const o=lk.classList.toggle("open");bg.setAttribute("aria-expanded",o)};document.addEventListener("keydown",e=>{if(e.key==="Escape"){lk.classList.remove("open");bg.setAttribute("aria-expanded",false)}});</script>
+<script>const bg=document.getElementById("bg"),lk=document.getElementById("lk");
+if(bg&&lk){
+  const closeNav=()=>{lk.classList.remove("open");bg.setAttribute("aria-expanded","false");bg.textContent="☰";bg.setAttribute("aria-label","Open menu")};
+  bg.onclick=()=>{
+    const o=lk.classList.toggle("open");
+    bg.setAttribute("aria-expanded",o);
+    bg.textContent=o?"✕":"☰";
+    bg.setAttribute("aria-label",o?"Close menu":"Open menu");
+  };
+  lk.querySelectorAll("a").forEach(a=>a.onclick=closeNav);
+  document.addEventListener("keydown",e=>{if(e.key==="Escape")closeNav()});
+  document.addEventListener("click",e=>{if(!lk.contains(e.target)&&!bg.contains(e.target)&&lk.classList.contains("open"))closeNav()});
+}</script>
 </body></html>
