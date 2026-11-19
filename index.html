@@ -560,7 +560,7 @@ footer .soc a,footer .legal{border-color:rgba(255,255,255,.2)}
 
 <section id="contact"><div class="w cgrid rv">
 <div><span class="eb">Contact</span><h2>Let's build <em>something extraordinary.</em></h2><p class="lead">Tell us about your project goals. You will receive a detailed proposal and quote within 24 hours.</p>
-<div class="ci"><span>Email: <a data-email href="mailto:hello@brandisecreative.com">hello@brandisecreative.com</a></span><span>WhatsApp: <a href="https://wa.me/923232789839?text=Hi%20Brandise%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" data-t="whatsapp_click">+92 323 2789839</a></span><span>Serving businesses across the US &amp; worldwide</span></div>
+<div class="ci"><span>WhatsApp: <a href="https://wa.me/923232789839?text=Hi%20Brandise%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" data-t="whatsapp_click">+92 323 2789839</a></span><span>Serving businesses across the US &amp; worldwide</span></div>
 <a class="btn o" style="margin-top:28px" href="https://wa.me/923232789839?text=Hi%20Brandise%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" data-t="whatsapp_click">Chat on WhatsApp</a></div>
 <form id="fm" novalidate>
 <div class="row">
@@ -621,7 +621,6 @@ footer .soc a,footer .legal{border-color:rgba(255,255,255,.2)}
         <strong id="form-err-title">Submission could not be completed.</strong>
         <p id="form-err-msg">Your information has been preserved. Please try again or reach out directly:</p>
         <div class="status-fallbacks">
-          <a href="mailto:hello@brandisecreative.com">📧 hello@brandisecreative.com</a>
           <a href="https://wa.me/923232789839?text=Hi%20Brandise%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer">💬 WhatsApp (+92 323 2789839)</a>
         </div>
       </div>
@@ -633,9 +632,8 @@ footer .soc a,footer .legal{border-color:rgba(255,255,255,.2)}
       <span class="status-icon" aria-hidden="true">ℹ️</span>
       <div>
         <strong>Online form submissions are temporarily offline.</strong>
-        <p>We are actively taking projects via direct email and WhatsApp. Please message us directly:</p>
+        <p>We are actively taking projects via WhatsApp. Please message us directly:</p>
         <div class="status-fallbacks">
-          <a href="mailto:hello@brandisecreative.com">📧 hello@brandisecreative.com</a>
           <a href="https://wa.me/923232789839?text=Hi%20Brandise%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer">💬 WhatsApp (+92 323 2789839)</a>
         </div>
       </div>
@@ -673,7 +671,7 @@ footer .soc a,footer .legal{border-color:rgba(255,255,255,.2)}
    GA_ID              : Google Analytics 4 Measurement ID (optional, e.g. "G-XXXXXXXXXX").
    PIXEL_ID           : Meta Pixel ID (optional).
    ========================================================================== */
-const FORMSPREE_ENDPOINT = "YOUR_FORMSPREE_ENDPOINT";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mnpdzrqv";
 const EMAIL = "hello@brandisecreative.com";
 const GA_ID = "";
 const PIXEL_ID = "";
@@ -845,15 +843,13 @@ if (fm) {
 
     try {
       const formData = new FormData(fm);
-      const payload = Object.fromEntries(formData.entries());
 
       const res = await fetch(FORMSPREE_ENDPOINT, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
           "Accept": "application/json"
         },
-        body: JSON.stringify(payload)
+        body: formData
       });
 
       if (res.ok) {
