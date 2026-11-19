@@ -60,7 +60,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdro
 .who{padding:30px 0;border-block:1px solid var(--line);color:var(--mut);font-size:15px}
 .who .w{display:flex;gap:12px 34px;flex-wrap:wrap;align-items:center}.who b{color:var(--ink);font-weight:500}
 .light{background:var(--ivory);color:var(--dk)}.light .lead,.light .mut{color:var(--dkm)}.light .eb{color:#2a5fe0}
-.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:56px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:22px;margin-top:56px}
 .svc{background:#f5f7fb;border:1px solid #e3e7f0;border-radius:22px;padding:34px 30px}
 .svc .n{font-family:Montserrat,system-ui,sans-serif;color:#2a5fe0;font-size:15px}.svc h3{font-size:32px;margin:10px 0 12px}.svc p{color:var(--dkm);font-size:15.5px}
 details summary{cursor:pointer;font-weight:600;font-size:15px;list-style:none;margin-top:20px;min-height:44px;display:flex;align-items:center}
@@ -79,7 +79,7 @@ details summary::-webkit-details-marker{display:none}
 .note{margin-top:22px;font-size:13.5px;color:var(--mut)}
 .testi{margin-top:56px;border:1px dashed rgba(63,120,252,.45);border-radius:20px;padding:40px;text-align:center;color:var(--mut)}.testi h3{font-size:28px;color:var(--ink);margin-bottom:8px}
 dialog{margin:auto;max-width:640px;width:calc(100% - 32px);background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:22px;padding:36px}
-dialog::backdrop{background:rgba(0,0,0,.7)}dialog h3{font-size:34px;margin:6px 0 20px}dialog h4{color:var(--acc2);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;margin-top:18px}dialog p{color:var(--mut);font-size:15px}
+dialog::backdrop{background:rgba(0,0,0,.7)}@media(max-width:600px){dialog{padding:24px 18px;max-height:85vh;overflow-y:auto;border-radius:18px}dialog h3{font-size:24px;margin:6px 0 14px}}dialog h3{font-size:34px;margin:6px 0 20px}dialog h4{color:var(--acc2);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;margin-top:18px}dialog p{color:var(--mut);font-size:15px}
 .x{float:right;background:none;border:1px solid var(--line);color:var(--ink);width:44px;height:44px;border-radius:50%;font-size:18px;cursor:pointer}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;margin-top:56px;border-top:1px solid #dfe3ec}
 .st{padding:28px 24px 8px 0}.st b{font-family:Montserrat,system-ui,sans-serif;font-weight:700;font-size:46px;color:#2a5fe0}.st h3{font-size:26px;margin:6px 0 8px}.st p{color:var(--dkm);font-size:15px}
@@ -99,7 +99,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 34px;color:var(--mut);fon
 .legal{margin-top:38px;padding-top:24px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13.5px}.legal div{display:flex;gap:22px}
 .rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
-@media(max-width:600px){section{padding:76px 0}.w{padding:0 22px}.hero{padding-top:70px}}
+@media(max-width:600px){section{padding:76px 0}.w{padding:0 22px}.hero{padding-top:70px}.work{grid-template-columns:1fr;margin-top:36px}}
 .chips{display:flex;gap:10px;flex-wrap:wrap;margin:44px 0 0}
 .chip{min-height:44px;padding:0 22px;border-radius:99px;border:1px solid var(--line);background:none;color:var(--mut);font:600 14px Montserrat,system-ui,sans-serif;cursor:pointer;transition:all .2s}
 .chip:hover{color:var(--ink);border-color:rgba(0,0,0,.35)}.chip[aria-pressed=true]{background:var(--ink);color:#000;border-color:var(--ink)}
@@ -186,6 +186,7 @@ footer .soc a,footer .legal{border-color:rgba(255,255,255,.2)}
 <span class="eb">Selected Work</span>
 <h1>Work that earns <em>its keep.</em></h1>
 <p class="lead">A look at the brands, web apps, video edits, and automations we build. Filter by service and open any project for the full story.</p>
+<div style="margin:22px 0 26px"><a href="https://www.behance.net/brandisecreative" target="_blank" rel="noopener noreferrer" class="btn btp">Explore Behance Portfolio ↗</a></div>
 <div class="chips" id="ch" role="group" aria-label="Filter projects"></div>
 </div></section>
 <section class="bl" style="padding-top:50px"><div class="w">
@@ -195,9 +196,10 @@ footer .soc a,footer .legal{border-color:rgba(255,255,255,.2)}
 </div></section>
 <dialog id="dg" aria-labelledby="dt"><button class="x" id="dx" aria-label="Close">✕</button><span class="tag" id="dc"></span><h3 id="dt"></h3><h4>The problem</h4><p id="d1"></p><h4>What we did</h4><p id="d2"></p><h4>The result</h4><p id="d3"></p><p class="note">Case study overview.</p><a href="index.html#contact" class="btn p" style="margin-top:18px">Start a similar project</a></dialog>
 </main>
-<footer><div class="w"><div class="fg"><div><a href="index.html" class="logo"><img src="logo-light.png" alt="Brandise" width="157" height="36"></a><p style="margin-top:8px;font-weight:500;color:#b8bdc9">Where Brands Rise</p></div>
+<footer><div class="w"><div class="fg"><div><a href="index.html" class="logo"><img src="logo-light.png" alt="Brandise" width="157" height="36" loading="lazy"></a><p style="margin-top:8px;font-weight:500;color:#b8bdc9">Where Brands Rise</p></div>
 <ul><li><a href="index.html#services">Services</a></li><li><a href="projects.html">Work</a></li><li><a href="index.html#contact">Contact</a></li></ul>
 <div class="soc">
+<a href="https://www.behance.net/brandisecreative" target="_blank" rel="noopener noreferrer" aria-label="Brandise on Behance"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-4.971 3-3.459 0-5.69-2.316-5.69-5.918 0-3.64 2.298-6.082 5.568-6.082 3.493 0 5.342 2.455 5.176 5.864h-7.795c.08 1.83 1.258 2.871 2.922 2.871 1.241 0 2.072-.544 2.518-1.55l2.282 1.815zm-7.733-4.664h4.743c-.097-1.353-.873-2.128-2.318-2.128-1.467 0-2.327.77-2.425 2.128zm-11.993 7.664h-4v-14h4.896c2.476 0 4.104 1.255 4.104 3.447 0 1.341-.659 2.378-1.846 2.923 1.572.484 2.346 1.769 2.346 3.393 0 2.502-1.813 4.237-5.5 4.237zm-1.25-8.326h1.968c1.332 0 2.158-.619 2.158-1.745 0-1.077-.811-1.688-2.115-1.688h-2.011v3.433zm0 2.311v3.771h2.261c1.385 0 2.294-.65 2.294-1.875 0-1.293-.974-1.896-2.404-1.896h-2.151z"/></svg></a>
 <a href="https://www.instagram.com/brandisecreative/" target="_blank" rel="noopener noreferrer" aria-label="Brandise on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a>
 <a href="https://www.facebook.com/brandisecreative" target="_blank" rel="noopener noreferrer" aria-label="Brandise on Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8.2h2.8l.5-3.3h-3.3V8.4c0-.9.4-1.7 1.8-1.7h1.6V3.8s-1.3-.2-2.5-.2c-2.6 0-4.3 1.6-4.3 4.5v2.4H7.3v3.3h2.8V22z"/></svg></a>
 <a href="https://www.linkedin.com/company/brandisecreative" target="_blank" rel="noopener noreferrer" aria-label="Brandise on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 9h4v11H4zM6 3.5a2.2 2.2 0 110 4.4 2.2 2.2 0 010-4.4zM10 9h3.8v1.6c.6-1.1 2-1.9 3.7-1.9 3.3 0 3.5 2.2 3.5 4.6V20h-4v-6c0-1.4 0-2.7-1.6-2.7S14 12.5 14 14v6h-4z"/></svg></a>
@@ -205,17 +207,27 @@ footer .soc a,footer .legal{border-color:rgba(255,255,255,.2)}
 <div class="legal"><span>© 2026 Brandise. All rights reserved.</span><div><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></div></div></div></footer>
 <script>
 const projects=[
-{n:"Northwind Coffee",c:"Brand Identity",d:"New identity and packaging system.",c1:"#06122e",c2:"#3f78fc",p:"A local roaster looked like every other bag on the shelf.",w:"Built a new identity, packaging line and social template kit.",r:"Transformed brand perception and boosted shelf recognition across retail.",i:""},
-{n:"Lumen Skincare",c:"E-commerce Marketing",d:"Paid social and email funnel.",c1:"#000",c2:"#3f78fc",p:"Ad spend was rising while repeat purchases stayed flat.",w:"Rebuilt creative, launched Meta campaigns and a post-purchase email flow.",r:"Increased ad ROAS by 180% and customer retention rate.",i:""},
-{n:"Atlas Home Services",c:"AI Automation",d:"Instant lead follow-up system.",c1:"#0b1e52",c2:"#7da3ff",p:"Leads waited hours for a reply and many went cold.",w:"Connected forms, CRM and an AI assistant for instant replies and booking.",r:"Reduced lead response time from 4 hours to under 30 seconds.",i:""},
-{n:"Pinecrest Dental",c:"Web Dev & Local SEO",d:"Modern site built to book patients.",c1:"#111",c2:"#2a5fe0",p:"An outdated site was costing the clinic online bookings.",w:"Designed a fast, mobile-first site with clear booking paths and local SEO.",r:"Ranked #1 on local search and doubled monthly online appointments.",i:""},
-{n:"Harbor & Pine Boutique",c:"Social Media & Video",d:"Content system & video edits for retail.",c1:"#08153a",c2:"#5b8cff",p:"Posting was irregular and video content had low engagement.",w:"Created a video content system, monthly calendar, and Reels/TikTok edits.",r:"Grew video views by 350% and generated organic sales from Instagram.",i:""},
-{n:"Summit SaaS",c:"Web App Dev",d:"Custom SaaS dashboard and landing page.",c1:"#000",c2:"#1f4fd0",p:"Needed a modern web application frontend to convert trial users.",w:"Engineered a responsive React web app frontend with optimized UX.",r:"Boosted trial signups by 65% and improved user onboarding speed.",i:""}];
+{n:"Northwind Coffee",c:"Brand Identity",d:"New identity and packaging system.",c1:"#06122e",c2:"#3f78fc",p:"A local roaster looked like every other bag on the shelf.",w:"Built a new identity, packaging line and social template kit.",r:"Elevated visual brand perception with a cohesive packaging system and retail-ready assets.",i:""},
+{n:"Lumen Skincare",c:"E-commerce Marketing",d:"Paid social and email funnel.",c1:"#000",c2:"#3f78fc",p:"Ad spend was rising while repeat purchases stayed flat.",w:"Rebuilt creative, launched Meta campaigns and a post-purchase email flow.",r:"Optimized creative testing and launched automated retention flows to improve campaign efficiency.",i:""},
+{n:"Atlas Home Services",c:"AI Automation",d:"Instant lead follow-up system.",c1:"#0b1e52",c2:"#7da3ff",p:"Leads waited hours for a reply and many went cold.",w:"Connected forms, CRM and an AI assistant for instant replies and booking.",r:"Automated instant lead notifications and CRM synchronization to eliminate response delays.",i:""},
+{n:"Pinecrest Dental",c:"Web Dev & Local SEO",d:"Modern site built to book patients.",c1:"#111",c2:"#2a5fe0",p:"An outdated site was costing the clinic online bookings.",w:"Designed a fast, mobile-first site with clear booking paths and local SEO.",r:"Delivered a fast mobile-first patient booking flow and strengthened local search visibility.",i:""},
+{n:"Harbor & Pine Boutique",c:"Social Media & Video",d:"Content system & video edits for retail.",c1:"#08153a",c2:"#5b8cff",p:"Posting was irregular and video content had low engagement.",w:"Created a video content system, monthly calendar, and Reels/TikTok edits.",r:"Established a consistent short-form video cadence and content library tailored for retail engagement.",i:""},
+{n:"Summit SaaS",c:"Web App Dev",d:"Custom SaaS dashboard and landing page.",c1:"#000",c2:"#1f4fd0",p:"Needed a modern web application frontend to convert trial users.",w:"Engineered a responsive web application frontend with optimized UX.",r:"Streamlined the user onboarding flow and deployed a high-converting web application interface.",i:""}];
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const bg=$("#bg"),lk=$("#lk");
-bg.onclick=()=>{const o=lk.classList.toggle("open");bg.setAttribute("aria-expanded",o)};
-document.addEventListener("keydown",e=>{if(e.key==="Escape"){lk.classList.remove("open");bg.setAttribute("aria-expanded",false)}});
-$("#wk").innerHTML=projects.map((p,i)=>`<button class="pj" data-i="${i}" data-c="${p.c}" aria-label="Open case study: ${p.n}"><div class="th" style="--c1:${p.c1};--c2:${p.c2}"><img src="${p.i}" alt="${p.n} project preview" loading="lazy" width="400" height="300"><small>Case Study</small></div><div class="bd"><span class="tag">${p.c}</span><h3>${p.n}</h3><p>${p.d}</p></div></button>`).join("");
+if(bg&&lk){
+  const closeNav=()=>{lk.classList.remove("open");bg.setAttribute("aria-expanded","false");bg.textContent="☰";bg.setAttribute("aria-label","Open menu")};
+  bg.onclick=()=>{
+    const o=lk.classList.toggle("open");
+    bg.setAttribute("aria-expanded",o);
+    bg.textContent=o?"✕":"☰";
+    bg.setAttribute("aria-label",o?"Close menu":"Open menu");
+  };
+  lk.querySelectorAll("a").forEach(a=>a.onclick=closeNav);
+  document.addEventListener("keydown",e=>{if(e.key==="Escape")closeNav()});
+  document.addEventListener("click",e=>{if(!lk.contains(e.target)&&!bg.contains(e.target)&&lk.classList.contains("open"))closeNav()});
+}
+$("#wk").innerHTML=projects.map((p,i)=>`<button class="pj" data-i="${i}" data-c="${p.c}" aria-label="Open case study: ${p.n}"><div class="th" style="--c1:${p.c1};--c2:${p.c2}">${p.i?`<img src="${p.i}" alt="${p.n} project preview" loading="lazy" width="400" height="300">`:""}<small>Case Study</small></div><div class="bd"><span class="tag">${p.c}</span><h3>${p.n}</h3><p>${p.d}</p></div></button>`).join("");
 const cats=["All",...new Set(projects.map(p=>p.c))];
 $("#ch").innerHTML=cats.map((c,i)=>`<button class="chip" aria-pressed="${i===0}" data-c="${c}">${c}</button>`).join("");
 $$(".chip").forEach(b=>b.onclick=()=>{$$(".chip").forEach(x=>x.setAttribute("aria-pressed",x===b));$$(".pj").forEach(p=>p.classList.toggle("hide",b.dataset.c!=="All"&&p.dataset.c!==b.dataset.c))});

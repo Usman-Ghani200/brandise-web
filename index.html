@@ -220,7 +220,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdro
 .who{padding:30px 0;border-block:1px solid var(--line);color:var(--mut);font-size:15px}
 .who .w{display:flex;gap:12px 34px;flex-wrap:wrap;align-items:center}.who b{color:var(--ink);font-weight:500}
 .light{background:var(--ivory);color:var(--dk)}.light .lead,.light .mut{color:var(--dkm)}.light .eb{color:#2a5fe0}
-.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px;margin-top:56px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:22px;margin-top:56px}
 .svc{background:#f5f7fb;border:1px solid #e3e7f0;border-radius:22px;padding:34px 30px}
 .svc .n{font-family:Montserrat,system-ui,sans-serif;color:#2a5fe0;font-size:15px}.svc h3{font-size:28px;margin:10px 0 12px}.svc p{color:var(--dkm);font-size:15.5px}
 details summary{cursor:pointer;font-weight:600;font-size:15px;list-style:none;margin-top:20px;min-height:44px;display:flex;align-items:center}
@@ -259,7 +259,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 34px;color:var(--mut);fon
 .legal{margin-top:38px;padding-top:24px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13.5px}.legal div{display:flex;gap:22px}
 .rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
-@media(max-width:600px){section{padding:76px 0}.w{padding:0 22px}.hero{padding-top:70px}}
+@media(max-width:600px){section{padding:76px 0}.w{padding:0 22px}.hero{padding:48px 0 44px}.hero h1{font-size:clamp(30px,6.6vw,44px)}.grid3{grid-template-columns:1fr;margin-top:36px}}@media(max-width:480px){.cta-row{margin:28px 0 40px;flex-direction:column}.cta-row .btn{width:100%;justify-content:center}}
 .allwork{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:44px;padding:36px 0;border-block:1px solid var(--line);font-family:Montserrat,system-ui,sans-serif;font-size:clamp(28px,5vw,68px);letter-spacing:-.03em;line-height:1.05;transition:padding .3s}
 .allwork em{}.allwork small{display:block;font-family:Montserrat,system-ui,sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:12px}
 .allwork .ar{flex:none;width:clamp(60px,9vw,110px);height:clamp(60px,9vw,110px);border-radius:50%;background:var(--acc);color:#000;display:grid;place-items:center;font-size:clamp(26px,4vw,44px);font-family:Montserrat,system-ui,sans-serif;transition:transform .35s,background .3s}
@@ -308,7 +308,7 @@ footer .soc a,footer .legal{border-color:rgba(255,255,255,.2)}
 @media(max-width:700px){.hero::after{width:420px;height:420px;right:-170px;top:-150px}}
 
 .hv{display:none}
-@media(min-width:1000px){.hv{display:block;position:absolute;right:28px;top:0;width:440px;height:520px}.hero h1{max-width:660px;font-size:clamp(38px,4.8vw,68px)}.hero .lead{max-width:520px}}
+@media(min-width:1140px){.hv{display:block;position:absolute;right:28px;top:0;width:440px;height:520px}.hero h1{max-width:620px;font-size:clamp(38px,4.8vw,68px)}.hero .lead{max-width:520px}}
 .hv .c{position:absolute;border-radius:24px;box-shadow:0 34px 60px -28px rgba(0,0,0,.5)}
 .c1{left:10px;top:30px;width:300px;height:340px;background:#000;transform:rotate(-5deg);padding:20px;animation:fl 7s ease-in-out infinite}
 .c1 .dots span{display:inline-block;width:9px;height:9px;border-radius:50%;background:#3f78fc;margin-right:6px}
@@ -544,7 +544,7 @@ footer .soc a,footer .legal{border-color:rgba(255,255,255,.2)}
 
 <section id="contact"><div class="w cgrid rv">
 <div><span class="eb">Contact</span><h2>Let's build <em>something extraordinary.</em></h2><p class="lead">Tell us about your project goals. You will receive a detailed proposal and quote within 24 hours.</p>
-<div class="ci"><span>Email: <a data-email></a></span><span>WhatsApp: <a href="https://wa.me/923232789839?text=Hi%20Brandise%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" data-t="whatsapp_click">+92 323 2789839</a></span><span>Serving businesses across the US &amp; worldwide</span></div>
+<div class="ci"><span>Email: <a data-email href="mailto:hello@brandisecreative.com">hello@brandisecreative.com</a></span><span>WhatsApp: <a href="https://wa.me/923232789839?text=Hi%20Brandise%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" data-t="whatsapp_click">+92 323 2789839</a></span><span>Serving businesses across the US &amp; worldwide</span></div>
 <a class="btn o" style="margin-top:28px" href="https://wa.me/923232789839?text=Hi%20Brandise%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" data-t="whatsapp_click">Chat on WhatsApp</a></div>
 <form id="fm" novalidate><div class="row"><label>Name<input name="name" required autocomplete="name"><span class="err"></span></label><label>Business name<input name="business" autocomplete="organization"></label></div>
 <div class="row"><label>Email<input type="email" name="email" required autocomplete="email"><span class="err"></span></label><label>WhatsApp number<input type="tel" name="phone" autocomplete="tel"></label></div>
@@ -567,7 +567,7 @@ footer .soc a,footer .legal{border-color:rgba(255,255,255,.2)}
 </div></form>
 </div></section>
 </main>
-<footer><div class="w"><div class="fg"><div><a href="#top" class="logo"><img src="logo-light.png" alt="Brandise" width="157" height="36"></a><p style="margin-top:8px;font-weight:500;color:#b8bdc9">Where Brands Rise</p></div>
+<footer><div class="w"><div class="fg"><div><a href="#top" class="logo"><img src="logo-light.png" alt="Brandise" width="157" height="36" loading="lazy"></a><p style="margin-top:8px;font-weight:500;color:#b8bdc9">Where Brands Rise</p></div>
 <ul><li><a href="#services">Services</a></li><li><a href="https://www.behance.net/brandisecreative" target="_blank" rel="noopener noreferrer">Work</a></li><li><a href="#contact">Contact</a></li></ul>
 <div class="soc">
 <a href="https://www.behance.net/brandisecreative" target="_blank" rel="noopener noreferrer" aria-label="Brandise on Behance"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-4.971 3-3.459 0-5.69-2.316-5.69-5.918 0-3.64 2.298-6.082 5.568-6.082 3.493 0 5.342 2.455 5.176 5.864h-7.795c.08 1.83 1.258 2.871 2.922 2.871 1.241 0 2.072-.544 2.518-1.55l2.282 1.815zm-7.733-4.664h4.743c-.097-1.353-.873-2.128-2.318-2.128-1.467 0-2.327.77-2.425 2.128zm-11.993 7.664h-4v-14h4.896c2.476 0 4.104 1.255 4.104 3.447 0 1.341-.659 2.378-1.846 2.923 1.572.484 2.346 1.769 2.346 3.393 0 2.502-1.813 4.237-5.5 4.237zm-1.25-8.326h1.968c1.332 0 2.158-.619 2.158-1.745 0-1.077-.811-1.688-2.115-1.688h-2.011v3.433zm0 2.311v3.771h2.261c1.385 0 2.294-.65 2.294-1.875 0-1.293-.974-1.896-2.404-1.896h-2.151z"/></svg></a>
@@ -595,9 +595,16 @@ const track=n=>{try{window.gtag&&gtag("event",n);window.fbq&&fbq("trackCustom",n
 $$("[data-t]").forEach(a=>a.addEventListener("click",()=>track(a.dataset.t)));
 const bg=$("#bg"),lk=$("#lk");
 if(bg&&lk){
-  bg.onclick=()=>{const o=lk.classList.toggle("open");bg.setAttribute("aria-expanded",o)};
-  lk.querySelectorAll("a").forEach(a=>a.onclick=()=>{lk.classList.remove("open");bg.setAttribute("aria-expanded",false)});
-  document.addEventListener("keydown",e=>{if(e.key==="Escape"){lk.classList.remove("open");bg.setAttribute("aria-expanded",false)}});
+  const closeNav=()=>{lk.classList.remove("open");bg.setAttribute("aria-expanded","false");bg.textContent="☰";bg.setAttribute("aria-label","Open menu")};
+  bg.onclick=()=>{
+    const o=lk.classList.toggle("open");
+    bg.setAttribute("aria-expanded",o);
+    bg.textContent=o?"✕":"☰";
+    bg.setAttribute("aria-label",o?"Close menu":"Open menu");
+  };
+  lk.querySelectorAll("a").forEach(a=>a.onclick=closeNav);
+  document.addEventListener("keydown",e=>{if(e.key==="Escape")closeNav()});
+  document.addEventListener("click",e=>{if(!lk.contains(e.target)&&!bg.contains(e.target)&&lk.classList.contains("open"))closeNav()});
 }
 $$("[data-svc]").forEach(a=>a.addEventListener("click",()=>{$("#sv").value=a.dataset.svc}));
 const fm=$("#fm");
