@@ -2,13 +2,13 @@
 > Creative and technology agency serving US businesses: brand design, video editing, marketing, social media, AI automation and web app development. Tagline: Where Brands Rise
 
 ## Services
-- [Brand & Visual Design](https://usman-ghani200.github.io/brandise-web/brand-design.html)
-- [Video Editing & Motion](https://usman-ghani200.github.io/brandise-web/video-editing.html)
-- [Performance Marketing](https://usman-ghani200.github.io/brandise-web/digital-marketing.html)
-- [Social Media Management](https://usman-ghani200.github.io/brandise-web/social-media.html)
-- [AI & Workflow Automation](https://usman-ghani200.github.io/brandise-web/ai-automation.html)
-- [Web App Development](https://usman-ghani200.github.io/brandise-web/web-app-development.html)
+- [Brand & Visual Design](https://brandisecreative.com/brand-design.html)
+- [Video Editing & Motion](https://brandisecreative.com/video-editing.html)
+- [Performance Marketing](https://brandisecreative.com/digital-marketing.html)
+- [Social Media Management](https://brandisecreative.com/social-media.html)
+- [AI & Workflow Automation](https://brandisecreative.com/ai-automation.html)
+- [Web App Development](https://brandisecreative.com/web-app-development.html)
 
 ## More
-- [Portfolio on Behance](https://www.behance.net/brandise)
-- [Contact](https://usman-ghani200.github.io/brandise-web/#contact)
+- [Portfolio on Behance](https://www.behance.net/brandisecreative)
+- [Contact](https://brandisecreative.com/#contact)
