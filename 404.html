@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page Not Found | Brandise</title>
+<meta name="robots" content="noindex,follow">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#3f78fc">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--ink:#000;--mut:#555b6b;--acc:#3f78fc;--acc2:#2a5fe0;--line:rgba(0,0,0,.1)}
+*{margin:0;padding:0;box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{font-family:Montserrat,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+a{color:inherit;text-decoration:none}ul{list-style:none}
+:focus-visible{outline:2px solid var(--acc2);outline-offset:3px;border-radius:6px}
+.w{max-width:1180px;margin:0 auto;padding:0 28px}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo img{height:36px;width:auto;display:block}
+.links{display:flex;gap:34px;align-items:center;font-size:14.5px;color:var(--mut)}.links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 28px;border-radius:99px;font-weight:600;font-size:15px;border:1px solid transparent;cursor:pointer;font-family:inherit;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.p{background:#000;color:#fff}.p:hover{background:var(--acc);color:#fff}
+.o{border-color:rgba(0,0,0,.3);color:var(--ink);background:none}.o:hover{background:rgba(63,120,252,.08)}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--ink);width:46px;height:46px;border-radius:12px;font-size:20px;cursor:pointer}
+@media(max-width:900px){.burger{display:block}.links{display:none;position:absolute;top:72px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 28px 24px}.links.open{display:flex}.links a{padding:15px 0;border-bottom:1px solid var(--line);font-size:16px}.links .btn{margin-top:16px;border:0}}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:80px 28px;text-align:center}
+h1{font-family:Montserrat,system-ui,sans-serif;font-weight:700;font-size:clamp(80px,16vw,180px);line-height:1;letter-spacing:-.05em;color:var(--acc)}
+.msg{font-size:clamp(22px,4vw,36px);font-weight:700;letter-spacing:-.03em;margin:16px 0 10px}
+.sub{color:var(--mut);font-size:17px;max-width:480px;margin:0 auto 36px}
+.svc-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:28px}
+em{font-style:normal;background:linear-gradient(90deg,#3f78fc,#2a5fe0);-webkit-background-clip:text;background-clip:text;color:transparent}
+footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mut);font-size:14px;background:#000;color:#b8bdc9}
+.fg{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px}
+.legal-links{display:flex;gap:22px}.legal-links a:hover{color:#7da3ff}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="w nav">
+<a href="/" class="logo" aria-label="Brandise home"><img src="/logo-dark.png" alt="Brandise" width="157" height="36"></a>
+<button class="burger" id="bg" aria-expanded="false" aria-controls="lk" aria-label="Open menu">☰</button>
+<nav class="links" id="lk" aria-label="Main"><a href="/#services">Services</a><a href="https://www.behance.net/brandisecreative" target="_blank" rel="noopener noreferrer">Work</a><a href="/#process">Process</a><a href="/#faq">FAQ</a><a href="/#contact" class="btn p">Get a Free Quote</a></nav>
+</div></header>
+
+<main>
+<div>
+  <h1 aria-hidden="true">404</h1>
+  <p class="msg">Page not found.</p>
+  <p class="sub">The page you're looking for doesn't exist or has moved. Let's get you back on track.</p>
+  <a href="/" class="btn p">← Back to Home</a>
+  <div class="svc-links">
+    <a href="/brand-design" class="btn o">Brand Design</a>
+    <a href="/web-app-development" class="btn o">Web App Dev</a>
+    <a href="/video-editing" class="btn o">Video Editing</a>
+    <a href="/social-media" class="btn o">Social Media</a>
+    <a href="/digital-marketing" class="btn o">Performance Marketing</a>
+    <a href="/ai-automation" class="btn o">AI Automation</a>
+  </div>
+</div>
+</main>
+
+<footer><div class="w">
+<div class="fg">
+  <span>© 2026 Brandise. All rights reserved.</span>
+  <div class="legal-links"><a href="/privacy">Privacy Policy</a><a href="/terms">Terms &amp; Conditions</a></div>
+</div>
+</div></footer>
+
+<script>
+const bg=document.getElementById("bg"),lk=document.getElementById("lk");
+if(bg&&lk){
+  const closeNav=()=>{lk.classList.remove("open");bg.setAttribute("aria-expanded","false");bg.textContent="☰";bg.setAttribute("aria-label","Open menu")};
+  bg.onclick=()=>{const o=lk.classList.toggle("open");bg.setAttribute("aria-expanded",o);bg.textContent=o?"✕":"☰";bg.setAttribute("aria-label",o?"Close menu":"Open menu")};
+  lk.querySelectorAll("a").forEach(a=>a.onclick=closeNav);
+  document.addEventListener("keydown",e=>{if(e.key==="Escape")closeNav()});
+  document.addEventListener("click",e=>{if(!lk.contains(e.target)&&!bg.contains(e.target)&&lk.classList.contains("open"))closeNav()});
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+# Cloudflare Pages _redirects
+# Strip .html from all page URLs (301 permanent)
+/brand-design.html          /brand-design           301
+/web-app-development.html   /web-app-development    301
+/video-editing.html         /video-editing          301
+/social-media.html          /social-media           301
+/digital-marketing.html     /digital-marketing      301
+/ai-automation.html         /ai-automation          301
+/privacy.html               /privacy                301
+/terms.html                 /terms                  301

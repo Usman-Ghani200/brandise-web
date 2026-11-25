@@ -1,14 +1,16 @@
 # Brandise
-> Creative and technology agency serving US businesses: brand design, video editing, marketing, social media, AI automation and web app development. Tagline: Where Brands Rise
+> Creative and technology agency serving US businesses: brand design, video editing, marketing, social media, AI automation and web app development. Tagline: Where Brands Rise. 3+ years of industry experience.
 
 ## Services
-- [Brand & Visual Design](https://brandisecreative.com/brand-design.html)
-- [Video Editing & Motion](https://brandisecreative.com/video-editing.html)
-- [Performance Marketing](https://brandisecreative.com/digital-marketing.html)
-- [Social Media Management](https://brandisecreative.com/social-media.html)
-- [AI & Workflow Automation](https://brandisecreative.com/ai-automation.html)
-- [Web App Development](https://brandisecreative.com/web-app-development.html)
+- [Brand & Visual Design](https://brandisecreative.com/brand-design) — Logo, brand identity, packaging, UI/UX and creative assets for US businesses.
+- [Web App Development](https://brandisecreative.com/web-app-development) — Custom websites, SaaS platforms, dashboards and modern web applications.
+- [Video Editing & Motion](https://brandisecreative.com/video-editing) — Short-form Reels/TikToks/Shorts, YouTube long-form, motion graphics and ad edits.
+- [Performance Marketing](https://brandisecreative.com/digital-marketing) — Meta, Google and TikTok ad campaigns engineered for ROI and lead generation.
+- [Social Media Management](https://brandisecreative.com/social-media) — Content strategy, scheduling, organic growth and analytics across all platforms.
+- [AI & Workflow Automation](https://brandisecreative.com/ai-automation) — Custom AI chatbots, lead capture automations, CRM integrations and workflows.
 
 ## More
 - [Portfolio on Behance](https://www.behance.net/brandisecreative)
 - [Contact](https://brandisecreative.com/#contact)
+- [Privacy Policy](https://brandisecreative.com/privacy)
+- [Terms & Conditions](https://brandisecreative.com/terms)
