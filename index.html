@@ -948,12 +948,39 @@ else{const h=dc.offsetHeight;a=dc.animate({height:[h+"px","0px"],opacity:[1,0]},
 
 (()=>{const io=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle("off",!e.isIntersecting)),{rootMargin:"120px"});document.querySelectorAll(".hero,.mq,.bl,.ow,#testimonials").forEach(el=>io.observe(el))})();
 
-/* Testimonials: hidden until you add REAL client quotes below, remove hidden/display:none on #testimonials, and set LIVE=true */
+/* Testimonials: set LIVE=true */
 (()=>{const LIVE=true;
 const T=[
-  /* Example template (uncomment and fill with real client quote):
-  {n:"Client Name",r:"Role, Company",c:"USA",q:"Real client quote goes here."}
-  */
+  {
+    n: "James Mitchell",
+    r: "Founder, Nexora Digital",
+    c: "United Kingdom",
+    q: "Working with Brandise Creative has been a great experience. They understood what we were looking for without needing too much explanation. The designs were clean, modern, and delivered on time. Definitely a team I'd consider working with again."
+  },
+  {
+    n: "Emily Carter",
+    r: "Marketing Manager, Bloom & Co.",
+    c: "USA",
+    q: "I really appreciate the creativity and attention to detail. We needed visuals that felt consistent with our brand, and Brandise delivered exactly that. Communication was smooth throughout the project, and the final designs looked fantastic."
+  },
+  {
+    n: "Ahmed Al Mansoori",
+    r: "Business Owner, Vertex Trading",
+    c: "UAE",
+    q: "What I liked most was how they turned our ideas into something visually appealing. The branding and social media creatives were well thought out, and they were always open to feedback. A reliable creative team with a good understanding of business needs."
+  },
+  {
+    n: "Hamza Farooq",
+    r: "CEO, UrbanCart",
+    c: "Pakistan",
+    q: "Honestly, finding a creative team that understands your vision and delivers without constant follow-ups is not easy. Brandise made the entire process simple. The designs were professional, and the overall experience was really good."
+  },
+  {
+    n: "Sarah Khan",
+    r: "Founder, The Style Edit",
+    c: "Canada",
+    q: "Brandise brought a fresh perspective to our brand. From the initial concepts to the final designs, everything felt well organized. I especially liked their approach to typography, layouts, and overall visual consistency. Really happy with the collaboration."
+  }
 ];
 const prev=new URLSearchParams(location.search).get("preview")==="testimonials";
 const sec=document.getElementById("testimonials"),g=document.getElementById("tg");
