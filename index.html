@@ -949,7 +949,7 @@ else{const h=dc.offsetHeight;a=dc.animate({height:[h+"px","0px"],opacity:[1,0]},
 (()=>{const io=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle("off",!e.isIntersecting)),{rootMargin:"120px"});document.querySelectorAll(".hero,.mq,.bl,.ow,#testimonials").forEach(el=>io.observe(el))})();
 
 /* Testimonials: hidden until you add REAL client quotes below, remove hidden/display:none on #testimonials, and set LIVE=true */
-(()=>{const LIVE=false;
+(()=>{const LIVE=true;
 const T=[
   /* Example template (uncomment and fill with real client quote):
   {n:"Client Name",r:"Role, Company",c:"USA",q:"Real client quote goes here."}
